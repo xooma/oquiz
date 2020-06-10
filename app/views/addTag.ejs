@@ -1,0 +1,16 @@
+<%- include('partials/header') %> 
+<% if (!locals.newTag) { %>
+    <div>
+        <h2> Ajouter un tag </h2>
+    </div>
+        
+    <form action="/addTag" method="post">
+        <input type="text" name="name" id="name" placeholder="Nom du tag">
+        <input type="submit" value="Valider">
+    </form>
+<% } else { %>
+    <div>
+        <h2> Le tag <%= newTag.name %> a bien été ajouté ! </h2>
+    </div>
+<% } %>
+<%- include('partials/footer') %> 

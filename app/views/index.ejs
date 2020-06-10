@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+  <div>
+    <h2> Bienvenue sur O'Quiz </h2>
+
+    <div class="tags--list">
+      <% for (let tag of tags) { %>
+        <a href="/tags/<%= tag.id %>">
+          <div class="tags--<%= tag.name.toLowerCase() %>">
+            <p> <%= tag.name %> </p> 
+          </div>
+        </a> 
+      <% } %>
+    </div>
+    
+  </div>
+
+  <div class="row">
+  <% for (let quiz of quizzes) { %>
+    <div class="col">
+        <a href="/quiz/<%= quiz.id %>"><h3> <%= quiz.title %> </h3></a>
+        <h5> par <%= quiz.author.getFullName() %> </h5>
+        <p> <%= quiz.description %> </p>
+    </div>
+    <% } %>
+  </div>
+
+  <%- include('partials/footer') %> 

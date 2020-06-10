@@ -1,0 +1,27 @@
+<%- include('partials/header') %> 
+
+<div>
+
+  <% if (locals.error) { %>
+    <div class="error"><%= error %></div>
+  <% } %>
+
+  <form method="POST" action="/login">
+    <div>
+      <label for="input-email">Email :</label>
+      <input type="text" name="email" id="input-email">
+    </div>
+
+    <div>
+      <label for="input-password">Mot de passe :</label>
+      <input type="password" name="password" id="input-password">
+    </div>
+
+    <div>
+      <input type="submit" value="Se Connecter">
+    </div>
+
+  </form>
+</div>
+
+<%- include('partials/footer') %> 

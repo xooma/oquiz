@@ -1,0 +1,26 @@
+<%- include('partials/header') %> 
+
+    <div>
+        <h2> Modifier un tag </h2>
+    </div>
+    <% if (!locals.tags) { %>
+        <form action="/editTag/<%= tag.id %>" method="post">
+            <label for="<%= tag.id %>">Nom :</label>
+            <input type="text" name="name" id="<%= tag.id %>" value="<%= tag.name %>">
+            <label for="<%= tag.status %>">Status :</label>
+            <input type="number" name="status" id="<%= tag.status %>" min="0" max="1" value="<%= tag.status %>">
+            <input type="submit" value="Valider">
+        </form>
+    <% } else { %>
+
+    <form action="/editTag" method="post">
+        <select name="tag" id="tag">
+            <% for (let tag of tags) { %>
+                <option value="<%= tag.id %>"><%= tag.name %></option>
+            <% } %>
+        </select>
+        <input type="submit" value="Valider">
+      </form>
+    <% } %>
+
+<%- include('partials/footer') %> 

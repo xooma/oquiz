@@ -1,0 +1,48 @@
+<%- include('partials/header') %> 
+
+<div>
+
+  <% if (locals.errorsList) { %>
+    <% for (let error of errorsList) { %>
+      <div class="error">
+        - <%= error %>
+      </div>
+    <% } %>
+    
+  <% } %>
+  <form method="POST" action="/signup">
+
+    <div>
+      <label for="input-firstname">Prénom : </label>
+      <input type="text" name="firstname" id="input-firstname">
+    </div>
+
+    <div>
+      <label for="input-lastname">Nom : </label>
+      <input type="text" name="lastname" id="input-lastname">
+    </div>
+
+    <div>
+      <label for="input-email">Email :</label>
+      <input type="text" name="email" id="input-email">
+    </div>
+
+    <div>
+      <label for="input-password">Mot de passe :</label>
+      <input type="password" name="password" id="input-password">
+    </div>
+
+    <div>
+      <label for="input-password-confirm">Confirmation du Mot de passe :</label>
+      <input type="password" name="password-confirm" id="input-password-confirm">
+    </div>
+
+
+    <div>
+      <input type="submit" value="S'inscrire">
+    </div>
+
+  </form>
+</div>
+
+<%- include('partials/footer') %> 

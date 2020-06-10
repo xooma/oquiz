@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+  <div>
+    <h2> Profile </h2>
+  </div>
+
+  <div >
+      <p>Email : <%= user.email %></p>
+      <p>Hash-PSWD : <%= user.password %></p>
+      <p>Nom : <%= user.lastname %></p>
+      <p>Prénom : <%= user.firstname %></p>
+      <p>Role : <%= user.role %></p>
+  </div>
+
+<%- include('partials/footer') %> 

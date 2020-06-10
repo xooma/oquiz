@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+    <div class="row">
+      <div class="col">
+          <h3> <%= quiz.title %> </h3>
+          <h4> <%= quiz.description %> </h5> 
+          <div class="tags">
+            <% for (let tag of quiz.tags) { %>
+              <h6 class="tags--<%= tag.name.toLowerCase() %>"> <%= tag.name %> </h6> 
+            <% } %>
+          </div>
+          <form method="post" action="/quiz/<%= quiz.id %>">
+            <div class="questions">
+              <% let number = 1 %>
+              <% for (let question of quiz.questions) { %>
+                <p>
+                  <%= number++ %>. <%= question.question %> <span class="level--<%= question.level.name.toLowerCase() %>">(<%= question.level.name %>)</span>
+                </p>
+
+                <div class="answers">
+                  <% for (let answer of question.answers) { %>
+                    <input type="radio" id="<%= answer.id %>" name="<%= question.id %>" value="<%= answer.id %>">
+                    <label for="<%= answer.id %>"><%= answer.description %></label>
+                  <% } %>
+                </div>
+              <% } %>
+            </div>
+            <div>
+              <input class="btn" type="submit" value="Envoyer">
+            </div>
+          </form>
+      </div>
+    </div>
+
+    <%- include('partials/footer') %> 

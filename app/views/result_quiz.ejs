@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+<% console.log(locals) %>
+    <div class="row">
+      <div class="col">
+          <h3> <%= quiz.title %> </h3>
+          <h4> <%= quiz.description %> </h5> 
+          <div class="tags">
+            <% for (let tag of quiz.tags) { %>
+              <h6 class="tags--<%= tag.name.toLowerCase() %>"> <%= tag.name %> </h6> 
+            <% } %>
+          </div>
+          <div><h2>Vous avez <%= result.length %> bonnes réponses.</h2></div>
+          <form method="post" action="/quiz/<%= quiz.id %>">
+            <div class="questions">
+              <% let number = 1 %>
+              <% for (let question of quiz.questions) { %>
+                  <% if (data[question.id] == question.good_answer.id) { %>
+                    <p class="good--answer">
+                      <%= number++ %>. <%= question.question %> <span class="level--<%= question.level.name.toLowerCase() %>">(<%= question.level.name %>)</span>
+                    </p>
+                  <% } else { %>
+                    <p class="wrong--answer">
+                      <%= number++ %>. <%= question.question %> <span class="level--<%= question.level.name.toLowerCase() %>">(<%= question.level.name %>)</span>
+                    </p>
+  
+                  <% } %>
+                  <% } %>
+            </div>
+            <div>
+              <input class="btn" type="submit" value="Envoyer">
+            </div>
+          </form>
+      </div>
+    </div>
+
+    <%- include('partials/footer') %> 

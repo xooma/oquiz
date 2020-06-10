@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+
+
+<div>
+  <h2> <%= tags.name %> </h2>
+</div>
+
+<div class="row">
+  <div class="col">
+      <h2> <%= tags.name %> </h2>
+    <% for (let quiz of tags.quizzes) { %>
+        <h3> <%= quiz.title %> </h3>
+        <h5> <%= quiz.description %> </h5>
+        <p> <%= quiz.author.getFullName() %> </p>
+   <% } %>
+  </div>
+
+</div>
+
+<%- include('partials/footer') %> 
