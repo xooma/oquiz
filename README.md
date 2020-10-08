@@ -1,7 +1,8 @@
 # oquiz
 ### Training Project Quizz App
 
-Node.js, Express, Sequelize & PostgreSQL
+#### Node.js, Express, Sequelize & PostgreSQL
+_Serverside rendering_
 
 * 💾 Create database with PostgreSQL
 * 🗄️ Be sure to create .env file where PG_URL is the URL of you database
