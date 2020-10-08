@@ -9,7 +9,7 @@ Node.js, Express, Sequelize & PostgreSQL
 ```
 psql -U userName -d databaseName -f data/import_tables.sql
 psql -U userName -d databaseName -f data/import_data.sql
-psql -U userName -d databaseName -f migrate_app_users.sql
+psql -U userName -d databaseName -f data/migrate_app_users.sql
 ```
 
 ⏭️ Then you can start the project
