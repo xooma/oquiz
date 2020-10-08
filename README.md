@@ -13,7 +13,8 @@ psql -U userName -d databaseName -f migrate_app_users.sql
 ```
 
 ⏭️ Then you can start the project
-(don't forget to install dependencies)
+⚠️ Don't forget to install dependencies
 ```
+npm install
 npm start
 ```
