@@ -5,7 +5,7 @@
 _Serverside rendering_
 
 * 💾 Create database with PostgreSQL
-* 🗄️ Be sure to create .env file where PG_URL is the URL of you database
+* 🗄️ Be sure to create .env file where PG_URL is the URL of your database
 * 📁 Insert SQL data from data folder and :
 ```
 psql -U userName -d databaseName -f data/import_tables.sql
